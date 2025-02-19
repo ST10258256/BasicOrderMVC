@@ -1,0 +1,23 @@
+
+
+<h1>Order</h1>
+
+<form method="post" action="/order/add">
+    <h3>Product</h6>
+    <input type="text" name="ProductName" class="form-control" placeholder="" required>
+    <h3>Product Price</h6>
+    <input type="number" name="ProductPrice" class="form-control" placeholder="" required>
+    <h3>Product Quantity</h6>
+    <input type="number" name="ProductAmount" class="form-control" placeholder="" required>
+    
+    <button type="submit" class="btn btn-danger">submit -></button>
+</form>
+
+@if (ViewBag.OrderMessage != null)
+{
+    <div class="alert alert-success">@ViewBag.OrderMessage</div>
+}
+@if (ViewBag.TotalCost != null && !string.IsNullOrEmpty(ViewBag.TotalCost))
+{
+    <div class="alert alert-info">@ViewBag.TotalCost</div>
+}
